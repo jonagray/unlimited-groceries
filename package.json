@@ -5,7 +5,12 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "privacy": "unlisted"
+  },
+  "ios": {
+    "supportsTablet": true,
+    "bundleIdentifier": "com.jon.a.graybill.unlimited-groceries"
   },
   "dependencies": {
     "@expo/vector-icons": "^10.2.0",
