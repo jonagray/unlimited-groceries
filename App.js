@@ -39,7 +39,7 @@ function MyStack() {
        name="Main" 
        component={MainScreen} 
        options={
-         { title: 'Main' },
+         { title: 'Grocery List' },
          {headerLeft: null} 
        }
       />
