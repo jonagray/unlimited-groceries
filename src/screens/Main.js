@@ -81,7 +81,6 @@ export default class MainScreen extends Component {
           onSubmitEditing={this.addNewGrocery}
         />
 
-
         <View>
           {groceryKeys.length > 0 ? (
             groceryKeys.map(key => (
@@ -99,7 +98,6 @@ export default class MainScreen extends Component {
 
       </ScrollView>
     );
-
   }
 }
 
@@ -181,9 +179,6 @@ const styles = StyleSheet.create({
   }
 });
 
-
-
-
 //   render() {
 //     this.state = {
 //       displayName: firebase.auth().currentUser.displayName,
@@ -204,18 +199,3 @@ const styles = StyleSheet.create({
 //     );
 //   }
 // }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     display: "flex",
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     padding: 35,
-//     backgroundColor: '#fff'
-//   },
-//   textStyle: {
-//     fontSize: 15,
-//     marginBottom: 20
-//   }
-// });

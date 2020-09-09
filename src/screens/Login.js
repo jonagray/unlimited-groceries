@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
 import firebase from '../firebase/config';
 
-
-
 export default class Login extends Component {
   
   constructor() {
@@ -39,7 +37,7 @@ export default class Login extends Component {
           email: '', 
           password: ''
         })
-        this.props.navigation.navigate('Main')
+        this.props.navigation.navigate('Grocery List')
       })
       .catch(error => this.setState({ errorMessage: error.message }))
     }
@@ -74,12 +72,11 @@ export default class Login extends Component {
           title="Signin"
           onPress={() => this.userLogin()}
         />   
-
-        <Text 
+        {/* <Text 
           style={styles.loginText}
           onPress={() => this.props.navigation.navigate('Signup')}>
           Don't have account? Click here to signup
-        </Text>                          
+        </Text>                           */}
       </View>
     );
   }
