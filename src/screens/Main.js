@@ -1,7 +1,5 @@
 import React, { useState, Component } from 'react';
-// import {db} from '../firebase/config';
 import firebase from '../firebase/config';
-// import database from '@react-native-firebase/database';
 import {
   StyleSheet,
   Alert,
@@ -17,8 +15,6 @@ import {
 import CheckBox from 'react-native-check-box';
 import { Feather } from '@expo/vector-icons';
 
-// const reference = database().ref('/groceries');
-
 export default class MainScreen extends Component {
   constructor() {
     super();
@@ -30,10 +26,7 @@ export default class MainScreen extends Component {
 
     this.addNewGrocery = this.addNewGrocery.bind(this);
     this.removeGrocery = this.removeGrocery.bind(this);
-
   }
-
-  //     db.ref('/groceries').on('value', querySnapShot => {
 
   componentDidMount() {
     firebase.database().ref('/groceries').on('value', querySnapShot => {
@@ -45,17 +38,6 @@ export default class MainScreen extends Component {
       });
     });
   }
-
-  //   addNewGrocery() {
-//     db.ref('/groceries').push({
-//       done: false,
-//       groceryItem: this.state.groceryList,
-//     });
-//     // Alert.alert('Action!', 'A new To-do item was created');
-//     this.setState({
-//       groceryList: '',
-//     });
-//   }
 
   addNewGrocery() {
     firebase.database().ref('/groceries').push({
@@ -115,16 +97,6 @@ export default class MainScreen extends Component {
 
         </View>
 
-        {/* <Button
-          title="Add New Grocery Item"
-          onPress={this.addNewGrocery}
-          color="lightgreen"
-        /> */}
-
-        {/* <View style={{marginTop: 50}}>
-          <Button title="Clear Groceries" onPress={this.clearGroceries} color="red" />
-        </View> */}
-
       </ScrollView>
     );
 
@@ -133,8 +105,6 @@ export default class MainScreen extends Component {
 
 const GroceryItem = ({ groceryItem: { groceryItem: name, done }, id }) => {
   const [doneState, setDone] = useState(done);
-
-
 
   const onRemove = () => {
     setDone(!doneState);
